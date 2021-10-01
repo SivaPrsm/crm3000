@@ -1,0 +1,7 @@
+.section:hover {
+	box-shadow: 0 .2rem .3rem grey;
+}
+
+i, .card-footer {
+	color: white;
+}

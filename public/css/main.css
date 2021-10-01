@@ -1,0 +1,17 @@
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+a:hover {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.title {
+	margin: 1em auto;
+}
+
+.row:not(:first-child) {
+	margin-top: 3em;
+}

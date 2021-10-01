@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ username }}!{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="css/home.css">
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<div class="row title text-center">
+		<h1>Bienvenue {{ username }} !</h1>
+	</div>
+
+	<div class="row justify-content-around">
+		{% if isAdmin %}
+		<div class="section col-3 card bg-dark">
+			<a href="{{ path('user') }}">
+				<div class="card-body text-center">
+					<i class="fas fa-user fa-7x"></i>
+				</div>
+				<div class="card-footer bg-transparent bg-dark text-center">Utilisateurs</div>
+			</a>
+		</div>
+
+		<div class="section col-3 card bg-dark">
+			<a href="{{ path('company') }}">
+				<div class="card-body text-center">
+					<i class="fas fa-building fa-7x"></i>
+				</div>
+				<div class="card-footer bg-transparent bg-dark text-center">Sociétés</div>
+			</a>
+		</div>
+		{% endif %}
+
+		<div class="section col-3 card bg-dark">
+			<a href="{{ path('customer') }}">
+				<div class="card-body text-center">
+					<i class="fas fa-user-tag fa-7x"></i>
+				</div>
+				<div class="card-footer bg-transparent bg-dark text-center">Clients</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="row justify-content-center">
+		<a class="btn btn-light col-2" href="{{ path('app_logout')  }}" role="button">Déconnexion</a>
+	</div>
+</div>
+{% endblock %}
