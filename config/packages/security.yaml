@@ -38,5 +38,9 @@ security:
     access_control:
         # allow unauthenticated users to access login page
         - { path: ^/login, roles: PUBLIC_ACCESS }
+        # user and company routes are restricted to administrators
+        - { path: ^/user, roles: ROLE_ADMIN } 
+        - { path: ^/user/edit/\d+$, roles: ROLE_ADMIN } 
+        - { path: ^/company, roles: ROLE_ADMIN } 
         # at least ROLE_USER is required to access the other pages
         - { path: ^/, roles: ROLE_USER }
