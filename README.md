@@ -13,13 +13,11 @@ This is a sandbox project for Symfony and JS training and evaluation.
 ## Installation
 
 Clone the repository in your workspace:
-
 ```bash
 git clone https://github.com/SivaPrsm/crm3000.git
 ```
 
 Update the file `.env` with your database configuration, then launch the database migration and populate it:
-
 ```bash
 symfony console doctrine:migrations:migrate
 symfony console doctrine:fixture:load
@@ -34,6 +32,16 @@ You can now open the project in your browser at [https://localhost:8000][3] and 
 
   * username: admin
   * password: admin
+
+
+## Repopulate
+
+If you need a new set of data, please rollback the migration first as follows:
+```bash
+symfony console doctrine:migrations:migrate first -n
+symfony console doctrine:migrations:migrate -n
+symfony console doctrine:fixture:load -n
+```
 
 [1]: https://getcomposer.org/download/
 [2]: https://symfony.com/download
