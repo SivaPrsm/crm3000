@@ -40,14 +40,14 @@ class UserCompanyFixtures extends Fixture
 
 		// associate 2 users per company
 		for ($i=0; $i<10; $i++) {
-			$users[$i*2]->setIdCompany($companies[$i]);
+			$users[$i*2]->setCompany($companies[$i]);
 			$manager->persist($users[$i*2]);
 
-			$users[($i*2)+1]->setIdCompany($companies[$i]);
+			$users[($i*2)+1]->setCompany($companies[$i]);
 			$manager->persist($users[($i*2)+1]);
 
 			// set company supervisor
-			$companies[$i]->setIdSupervisor($users[$i*2]);
+			$companies[$i]->setSupervisor($users[$i*2]);
 			$manager->persist($companies[$i]);
 		}
 

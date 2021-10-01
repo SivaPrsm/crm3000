@@ -38,7 +38,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\ManyToOne(targetEntity=Company::class, inversedBy="users")
      */
-    private $id_company;
+    private $company;
 
 	/*
 	 * Check if User has admin role
@@ -134,14 +134,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getIdCompany(): ?Company
+    public function getCompany(): ?Company
     {
-        return $this->id_company;
+        return $this->company;
     }
 
-    public function setIdCompany(?Company $id_company): self
+    public function setCompany(?Company $company): self
     {
-        $this->id_company = $id_company;
+        $this->company = $company;
 
         return $this;
     }

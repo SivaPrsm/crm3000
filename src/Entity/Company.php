@@ -27,7 +27,7 @@ class Company
     /**
      * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
      */
-    private $id_supervisor;
+    private $supervisor;
 
     /**
      * @ORM\OneToMany(targetEntity=User::class, mappedBy="id_company")
@@ -56,14 +56,14 @@ class Company
         return $this;
     }
 
-    public function getIdSupervisor(): ?User
+    public function getSupervisor(): ?User
     {
-        return $this->id_supervisor;
+        return $this->supervisor;
     }
 
-    public function setIdSupervisor(?User $id_supervisor): self
+    public function setSupervisor(?User $supervisor): self
     {
-        $this->id_supervisor = $id_supervisor;
+        $this->supervisor = $supervisor;
 
         return $this;
     }
