@@ -16,9 +16,13 @@ class AdminFixtures extends Fixture
 		$this->passwordHasher = $passwordHasher;
 	}
 
+	/**
+	 *	Set First Admin user to access CRM
+	 *
+	 *	@param ObjectManager
+	 */
     public function load(ObjectManager $manager): void
 	{
-		// set admin to access crm
 		$admin = new User();
 		$manager->persist($admin);
 
