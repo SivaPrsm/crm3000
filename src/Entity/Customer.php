@@ -52,6 +52,11 @@ class Customer
      */
     private $has_consumed;
 
+	public function __construct()
+	{
+		$this->created_on = new \DateTime();
+	}
+
     public function getId(): ?int
     {
         return $this->id;
